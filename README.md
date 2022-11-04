@@ -57,8 +57,8 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 Demonstrate your understanding of this sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
-1. What is the DOM?
-2. What is an event?
-3. What is an event listener?
+1. What is the DOM? The document object model. It is a javascript object that holds every element on the webpage.
+2. What is an event? Any user interaction on a page.
+3. What is an event listener? An element that considers two arguments. 1) the event 2) the callback to trigger when the event occurs.
 4. Why would we convert a NodeList into an Array?
 5. What is a component?
