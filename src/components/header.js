@@ -9,15 +9,18 @@ const Header = (title, date, temp) => {
   newsDate.classList.add('date');
   newsTemp.classList.add('temp');
 
-  newsDate.textContent = `${date}`;
-  newsTitle.textContent = `${title}`;
-  newsTemp.textContent = `${temp}`;
+  newsDate.textContent = date;
+  newsTitle.textContent = title;
+  newsTemp.textContent = temp;
 
   newsHeader.appendChild(newsDate);
   newsHeader.appendChild(newsTitle);
   newsHeader.appendChild(newsTemp);
 
   return newsHeader;
+}
+
+
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
@@ -30,7 +33,6 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
-}
 
 const headerAppender = (selector) => {
   // TASK 2
@@ -45,6 +47,10 @@ const headerAppender = (selector) => {
   // We are taking care of passing in the correct selector on line 16,
   // so all that you need to do is pass it into the querySelector method
   // for the tests to work!
+  const headerContainer = document.querySelector('.header-container');
+  headerContainer.textContent = Header;
+  headerContainer.appendChild(Header);
+  return headerContainer;
 }
 
 export { Header, headerAppender }
