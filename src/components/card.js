@@ -1,5 +1,8 @@
 const Card = (article) => {
   // TASK 5
+
+  Object.values
+  .flat()
   // ---------------------
   // Implement this function, which should return the markup you see below.
   // It takes as its only argument an "article" object with `headline`, `authorPhoto` and `authorName` properties.

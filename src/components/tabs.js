@@ -1,9 +1,11 @@
 const Tabs = (topics) => {
+  const topicDiv = document.createElement('div');
+  topicDiv.classList.add('topics');
 
   topics.forEach(element => {
     let newDiv = document.createElement('div');
     newDiv.classList.add('tab');
-    parent.appendChild(newDiv);    
+    topicDiv.appendChild(newDiv);
   });
   // TASK 3
   // ---------------------
@@ -29,6 +31,9 @@ const tabsAppender = (selector) => {
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
+  const tab = document.querySelector(selector);
+  tab.appendChild(Tabs(topics));
+  
 }
 
 export { Tabs, tabsAppender }
