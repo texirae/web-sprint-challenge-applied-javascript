@@ -48,7 +48,7 @@ const headerAppender = (selector) => {
   // so all that you need to do is pass it into the querySelector method
   // for the tests to work!
   const headerContainer = document.querySelector(selector);
-  headerContainer.appendChild(Header('BloomTech News', '11/4/2022', '40'));
+  headerContainer.appendChild(Header('BloomTech News', 'November 4, 2022', '40'));
 }
 
 export { Header, headerAppender }

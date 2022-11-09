@@ -1,14 +1,14 @@
-import { javascript } from "webpack";
+import axios from "axios";
 
 const Tabs = (topics) => {
   const topicDiv = document.createElement('div');
   topicDiv.classList.add('topics');
 
-  topics.forEach(topics => {
-    const newDiv = document.createElement('div');
-    newDiv.classList.add('tab');
-    newDiv.textContent = topics;
-    topicDiv.appendChild(newDiv);
+  topics.forEach((linkData) => {
+    const link = document.createElement('div');
+    link.classList.add('tab');
+    link.textContent = linkData;
+    topicDiv.appendChild(link);
   });
 
   return topicDiv;
@@ -36,10 +36,18 @@ const Tabs = (topics) => {
   // Find the array of topics inside the response, and create the tabs using the Tabs component.
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
-
-const tabsAppender = (selector) => { 
-  const tabSelector = document.querySelector(selector);
-  tabSelector.appendChild(Tabs['Javascript', 'Bootstrap', 'Technology', 'JQuery', 'Node.js']);  
+  
+const tabsAppender = (selector) => {
+  axios.get("http://localhost:5001/api/topics")
+  .then(resp => {
+    for(let i in resp.data.topics){
+      resp.data.topics[i].forEach(topics => {
+        document.querySelector(selector).appendChild(Tabs(topics))
+      })
+    }
+  })
 }
+
+
 
 export { Tabs, tabsAppender }
