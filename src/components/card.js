@@ -38,8 +38,8 @@ const Card = (article) => {
   imgContainer.classList.add('img-container');
 
   //set attributes
-  image.src = article.authorPhoto;
   headline.textContent = article.headline;
+  image.src = article.authorPhoto;
   span.textContent = article.authorName;
 
   //append to the DOM
@@ -48,6 +48,7 @@ const Card = (article) => {
   author.appendChild(imgContainer);
   author.appendChild(image);
   author.appendChild(span);
+  imgContainer.appendChild(image);
 
   //add event
   card.addEventListener('click', () => {

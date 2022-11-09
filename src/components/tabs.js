@@ -40,12 +40,8 @@ const Tabs = (topics) => {
 const tabsAppender = (selector) => {
   axios.get("http://localhost:5001/api/topics")
   .then(resp => {
-    for(let i in resp.data.topics){
-      resp.data.topics[i].forEach(topics => {
-        document.querySelector(selector).appendChild(Tabs(topics))
-      })
-    }
-  })
+    document.querySelector(selector).appendChild(Tabs(resp.data.topics));
+    })
 }
 
 
